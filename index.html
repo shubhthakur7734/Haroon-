@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gig Platform Prototype</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+}
+
+nav {
+  background: #084298;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 25px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #084298;
+}
+
+.map {
+  text-align: center;
+}
+
+footer {
+  background: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Gig Work Platform</header>
+
+<nav>
+  <a href="#workers">Workers</a>
+  <a href="#jobs">Jobs</a>
+  <a href="#analytics">Analytics</a>
+</nav>
+
+<section id="workers">
+  <h2>Workers</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="images/worker1.jpg">
+      <h3>Rahul Sharma</h3>
+      <p>Electrician</p>
+      <p>⭐ 4.6</p>
+      <button>Hire</button>
+    </div>
+
+    <div class="card">
+      <img src="images/worker2.jpg">
+      <h3>Amit Verma</h3>
+      <p>Plumber</p>
+      <p>⭐ 4.4</p>
+      <button>Hire</button>
+    </div>
+
+    <div class="card">
+      <img src="images/worker3.jpg">
+      <h3>Suresh Kumar</h3>
+      <p>Carpenter</p>
+      <p>⭐ 4.8</p>
+      <button>Hire</button>
+    </div>
+
+    <div class="card">
+      <img src="images/worker4.jpg">
+      <h3>Imran Khan</h3>
+      <p>Painter</p>
+      <p>⭐ 4.3</p>
+      <button>Hire</button>
+    </div>
+
+    <div class="card">
+      <img src="images/worker5.jpg">
+      <h3>Vikas Singh</h3>
+      <p>AC Technician</p>
+      <p>⭐ 4.7</p>
+      <button>Hire</button>
+    </div>
+  </div>
+</section>
+
+<section id="jobs">
+  <h2>Available Gigs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Electrician Needed</h3>
+      <p>📍 Delhi</p>
+      <p>₹800/day</p>
+      <button>Apply</button>
+    </div>
+
+    <div class="card">
+      <h3>Plumber Required</h3>
+      <p>📍 Mumbai</p>
+      <p>₹1000/day</p>
+      <button>Apply</button>
+    </div>
+
+    <div class="card">
+      <h3>Carpenter – Office Setup</h3>
+      <p>📍 Bangalore</p>
+      <p>₹1200/day</p>
+      <button>Apply</button>
+    </div>
+  </div>
+</section>
+
+<section id="analytics">
+  <h2>City Analytics</h2>
+  <div class="map">
+    <button onclick="show('Delhi')">Delhi</button>
+    <button onclick="show('Mumbai')">Mumbai</button>
+    <button onclick="show('Bangalore')">Bangalore</button>
+  </div>
+  <div id="result" style="text-align:center;margin-top:20px;"></div>
+</section>
+
+<footer>© 2026 Gig Platform</footer>
+
+<script>
+function show(city) {
+  const data = {
+    Delhi: "Workers: 1200 | Jobs: 450 | Avg Pay: ₹900/day",
+    Mumbai: "Workers: 980 | Jobs: 380 | Avg Pay: ₹1100/day",
+    Bangalore: "Workers: 860 | Jobs: 410 | Avg Pay: ₹1200/day"
+  };
+  document.getElementById("result").innerHTML =
+    "<strong>" + city + "</strong><br>" + data[city];
+}
+</script>
+
+</body>
+</html>
